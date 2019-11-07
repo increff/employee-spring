@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class RestConfig extends WebMvcConfigurerAdapter{
+public class RestConfig extends WebMvcConfigurerAdapter {
 
 	public static final String PACKAGE_CONTROLLER = "com.increff.employee.controller";
 
