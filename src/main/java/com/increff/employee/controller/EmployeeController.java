@@ -33,6 +33,7 @@ public class EmployeeController {
 		service.add(p);
 	}
 
+	
 	@ApiOperation(value = "Deletes and employee")
 	@RequestMapping(path = "/api/{id}", method = RequestMethod.DELETE)
 	// /api/1
@@ -42,7 +43,7 @@ public class EmployeeController {
 
 	@ApiOperation(value = "Gets an employee by ID")
 	@RequestMapping(path = "/api/{id}", method = RequestMethod.GET)
-	public EmployeeData get(int id) throws ApiException {
+	public EmployeeData get(@PathVariable int id) throws ApiException {
 		EmployeePojo p = service.get(id);
 		return convert(p);
 	}
@@ -64,11 +65,13 @@ public class EmployeeController {
 		EmployeePojo p = convert(f);
 		service.update(id, p);
 	}
+	
 
 	private static EmployeeData convert(EmployeePojo p) {
 		EmployeeData d = new EmployeeData();
 		d.setAge(p.getAge());
 		d.setName(p.getName());
+		d.setId(p.getId());
 		return d;
 	}
 

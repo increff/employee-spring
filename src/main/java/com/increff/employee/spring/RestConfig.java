@@ -22,7 +22,7 @@ public class RestConfig extends WebMvcConfigurerAdapter {
 		return new Docket(DocumentationType.SWAGGER_2)//
 				.useDefaultResponseMessages(false)//
 				.select().apis(RequestHandlerSelectors.basePackage(PACKAGE_CONTROLLER))//
-				.paths(PathSelectors.regex("/api/.*"))//
+				.paths(PathSelectors.regex("/api.*"))//
 				.build();
 	}
 
