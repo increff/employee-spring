@@ -1,11 +1,16 @@
 package com.increff.employee.model;
 
-public class StringData {
+public class UserData {
 
+	private String name;
 	private String message;
 
-	public StringData(String message) {
-		this.message = message;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getMessage() {

@@ -1,4 +1,4 @@
-package com.increff.training.employee.spring;
+package com.increff.employee.spring;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,11 +11,11 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@EnableSwagger2
 @Configuration
-public class RestappConfig extends WebMvcConfigurerAdapter {
+@EnableSwagger2
+public class RestConfig extends WebMvcConfigurerAdapter{
 
-	public static final String PACKAGE_CONTROLLER = "com.increff.training.employee.controller";
+	public static final String PACKAGE_CONTROLLER = "com.increff.employee.controller";
 
 	@Bean
 	public Docket api() {

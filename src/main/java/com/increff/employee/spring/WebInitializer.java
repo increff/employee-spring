@@ -1,4 +1,4 @@
-package com.increff.training.employee.spring;
+package com.increff.employee.spring;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
