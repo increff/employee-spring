@@ -27,7 +27,7 @@ public class EmployeeController {
 	private EmployeeService service;
 
 	@ApiOperation(value = "Adds an employee")
-	@RequestMapping(path = "/api", method = RequestMethod.POST)
+	@RequestMapping(path = "/api/employee", method = RequestMethod.POST)
 	public void add(@RequestBody EmployeeForm form) {
 		EmployeePojo p = convert(form);
 		service.add(p);
@@ -35,21 +35,21 @@ public class EmployeeController {
 
 	
 	@ApiOperation(value = "Deletes and employee")
-	@RequestMapping(path = "/api/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/api/employee/{id}", method = RequestMethod.DELETE)
 	// /api/1
 	public void delete(@PathVariable int id) {
 		service.delete(id);
 	}
 
 	@ApiOperation(value = "Gets an employee by ID")
-	@RequestMapping(path = "/api/{id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/employee/{id}", method = RequestMethod.GET)
 	public EmployeeData get(@PathVariable int id) throws ApiException {
 		EmployeePojo p = service.get(id);
 		return convert(p);
 	}
 
 	@ApiOperation(value = "Gets list of all employees")
-	@RequestMapping(path = "/api", method = RequestMethod.GET)
+	@RequestMapping(path = "/api/employee", method = RequestMethod.GET)
 	public List<EmployeeData> getAll() {
 		List<EmployeePojo> list = service.getAll();
 		List<EmployeeData> list2 = new ArrayList<EmployeeData>();
@@ -60,7 +60,7 @@ public class EmployeeController {
 	}
 
 	@ApiOperation(value = "Updates an employee")
-	@RequestMapping(path = "/api/{id}", method = RequestMethod.PUT)
+	@RequestMapping(path = "/api/employee/{id}", method = RequestMethod.PUT)
 	public void update(@PathVariable int id, @RequestBody EmployeeForm f) throws ApiException {
 		EmployeePojo p = convert(f);
 		service.update(id, p);
