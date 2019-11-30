@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -19,8 +20,9 @@ public class EmployeeDao {
 	private static String select_all = "select p from EmployeePojo p";
 
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 
+	@Transactional
 	public void insert(EmployeePojo p) {
 		em.persist(p);
 	}

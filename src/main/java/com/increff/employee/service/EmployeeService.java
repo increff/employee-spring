@@ -37,7 +37,7 @@ public class EmployeeService {
 		return dao.selectAll();
 	}
 
-	@Transactional(rollbackOn = ApiException.class)
+	@Transactional(rollbackOn  = ApiException.class)
 	public void update(int id, EmployeePojo p) throws ApiException {
 		normalize(p);
 		EmployeePojo ex = getCheck(id);
@@ -55,7 +55,7 @@ public class EmployeeService {
 		return p;
 	}
 
-	private static void normalize(EmployeePojo p) {
+	protected static void normalize(EmployeePojo p) {
 		p.setName(p.getName().toLowerCase().trim());
 	}
 }

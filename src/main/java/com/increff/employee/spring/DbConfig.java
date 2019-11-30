@@ -45,6 +45,7 @@ public class DbConfig {
 		bean.setUsername(jdbcUsername);
 		bean.setPassword(jdbcPassword);
 		bean.setInitialSize(2);
+		bean.setDefaultAutoCommit(false);
 		//bean.setMaxTotal(10);
 		bean.setMinIdle(2);
 		bean.setValidationQuery("Select 1");
@@ -66,7 +67,7 @@ public class DbConfig {
 		jpaProperties.put("hibernate.dialect", hibernateDialect);
 		jpaProperties.put("hibernate.show_sql", hibernateShowSql);
 		jpaProperties.put("hibernate.hbm2ddl.auto", hibernateHbm2ddl);
-		//jpaProperties.put("hibernate.jdbc.time_zone", hibernateTimezone);
+		jpaProperties.put("hibernate.hbm2ddl.auto", hibernateHbm2ddl);
 		bean.setJpaProperties(jpaProperties);
 		return bean;
 	}
