@@ -23,6 +23,7 @@
 		<hibernate.version>5.4.0.Final</hibernate.version>
 		<mysql.version>8.0.17</mysql.version>
 		<junit.version>4.12</junit.version>
+		<h2.version>1.4.200</h2.version>
 		<javax.servlet.version>3.1.0</javax.servlet.version>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
 
@@ -130,6 +131,15 @@
 			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 
 		<!-- Provided -->
 		<dependency>
